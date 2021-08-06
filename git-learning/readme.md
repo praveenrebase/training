@@ -105,3 +105,64 @@ git config user.name "Praveen Prajapati"
 
 
 ```
+
+
+# Protocols to create pull request for new features
+
+## Cloning the Repo
+```
+git clone "URL to git"
+```
+
+## Fetch
+```
+git fetch
+```
+
+## Sync with local branch with main branch
+```
+synch local(master/main) to remote (master/main)
+```
+
+## Creating Branch
+```
+Always create
+Name => name/feature-name
+```
+
+## Code and commit
+```
+Do code in this phase make commits
+```
+
+## push
+```
+Push local repo to remote
+```
+
+## pull request
+```
+create pull request/merge request and get it approved
+```
+
+## Share Pull Request URL
+```
+Share the pull request url to the slack/whatsaap group
+```
+
+## Fix comments
+```
+Fix the comments and commit the changes and reinform
+```
+
+## Approved
+```
+If approved merge and rebase
+```
+
+## Git fetch
+```
+Git fetcg and delete the local branch
+```
+
+Again /make new branch and start working
