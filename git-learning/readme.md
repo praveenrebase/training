@@ -4,7 +4,7 @@
 
 Git is a Version Control System, Code Storage(Store your code remotely) and platform for collboration between developers.
 
-### why Git
+### Why Git
 
 It is easy to use tool, developers can collaborate easily, aloows offline work.
 We can easily go back to the previus version if we make any mistack or break the code.
