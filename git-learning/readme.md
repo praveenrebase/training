@@ -107,7 +107,7 @@ git config user.name "Praveen Prajapati"
 ```
 
 
-# Protocols to commit
+# Protocols to create pull request for new features
 
 ## Cloning the Repo
 ```
