@@ -1,0 +1,26 @@
+{
+  "name": "training",
+  "version": "1.0.0",
+  "description": "rebase training",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha spec/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/praveenrebase/training.git"
+  },
+  "author": "Praveen Rebase",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/praveenrebase/training/issues"
+  },
+  "homepage": "https://github.com/praveenrebase/training#readme",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "sinon": "^11.1.2"
+  },
+  "dependencies": {
+    "mocha": "^9.0.3"
+  }
+}
