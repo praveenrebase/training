@@ -1,21 +1,21 @@
 // const createNode = require('./recursive')
 
-const recursive = require('./recursive')
-const assert = require ('assert')
+const recursive = require('./../modules/recursive')
+const assert = require('assert')
 
 let NODE = {
-    name:"A",
+    name: "A",
     description: "root",
     children: []
 }
 
-describe( "Creating the NODE", () => {  
+describe("Creating the NODE", () => {
     beforeEach(
-        NODE= {
+        NODE = {
             name: "A",
             description: "root",
             children: []
-    })
+        })
 
     describe("createNode", () => {
         tests = [
@@ -40,11 +40,11 @@ describe( "Creating the NODE", () => {
                 query: recursive.createNode(NODE, "C", "", "A")
             }
         ],
-        tests.forEach(test => {
-            it(test.description, () => {
-              assert.equal(test.query , test.expected);
-            });   
-        });
-    }   )
-     
+            tests.forEach(test => {
+                it(test.description, () => {
+                    assert.equal(test.query, test.expected);
+                });
+            });
+    })
+
 });
