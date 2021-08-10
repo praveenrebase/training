@@ -10,12 +10,13 @@ let NODE = {
 }
 
 describe("Creating the NODE", () => {
-    beforeEach(
+    beforeEach(() => {
         NODE = {
             name: "A",
             description: "root",
             children: []
-        })
+        }
+    })
 
     describe("createNode", () => {
         tests = [
