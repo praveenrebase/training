@@ -4,6 +4,7 @@
   "description": "rebase training",
   "main": "index.js",
   "scripts": {
+    "test": "mocha spec/*.test.js"
   },
   "repository": {
     "type": "git",
