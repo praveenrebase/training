@@ -12,6 +12,5 @@ class Mocking {
 
         return ("Ivalid Entries")
     }
-}
 
 module.exports = Mocking

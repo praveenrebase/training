@@ -3,12 +3,6 @@
 const recursive = require('./../modules/recursive')
 const assert = require('assert')
 
-let NODE = {
-    name: "A",
-    description: "root",
-    children: []
-}
-
 describe("Creating the NODE", () => {
     beforeEach(() => {
         NODE = {
