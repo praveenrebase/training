@@ -55,8 +55,8 @@ describe("Mocking", () => {
         stub.onSecondCall().returns(false)
         stub.onThirdCall().returns(true)
 
-        expect(mockInstance.logIn("praven@gmail.com", "1234")).to.be.false
-        expect(mockInstance.logIn("raveen@gmail.com", "124")).to.be.false
+        expect(mockInstance.logIn("praven@gmail.com", "wrongpassword")).to.be.false
+        expect(mockInstance.logIn("wronguser@gmail.com", "wrongpassword")).to.be.false
         expect(mockInstance.logIn("praveen@gmail.com", "12344")).to.be.true
     })
 })
