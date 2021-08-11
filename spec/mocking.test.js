@@ -34,4 +34,18 @@ describe("Mocking", () => {
         mockInstance.signUp("Praveen", "8554947569", "praveen@gmail.com", "12344")
         mockGreet.verify()
     })
+
+    it("mocking thirdParyAuth using sinon stub", () => {
+        sinon.stub(mockInstance, "thirdPartyAuth").callsFake(() => {
+            return true
+        })
+        expect(mockInstance.logIn("praveen@gmail.com", "12344")).to.be.true
+    })
+
+    it("stub thirdParyAuth failed", () => {
+        sinon.stub(mockInstance, "thirdPartyAuth").callsFake(() => {
+            return false
+        })
+        expect(mockInstance.logIn("praveen", "1")).to.be.false
+    })
 })
