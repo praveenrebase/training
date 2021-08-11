@@ -7,7 +7,6 @@ const expect = chai.expect
 
 
 describe("Mocking", () => {
-
     beforeEach(() => {
         mockInstance = new mocking()
     })
@@ -16,10 +15,23 @@ describe("Mocking", () => {
         expect(mockInstance.signUp("Praveen", "8554947569", "praveen@gmail.com", "12344")).to.be.equal("You got a new acconnt")
     })
 
-    it("mockng the greeting", () => {
+    it("spying the greet method", () => {
+        let spy = sinon.spy(mockInstance, "greet")
+        mockInstance.signUp("Praveen", "8554947569", "praveen@gmail.com", "12344")
+        sinon.assert.calledOnce(spy)
+    })
 
-        mockGreet = sinon.mock(mocking, "greeting")
-        mockGreet.expects("greeting").once().throws();
-        expect(mockInstance.signUp("Praveen", "8554947569", "praveen@gmail.com", "12344")).to.be.equal("You got a new acconnt")
+    it("Using chais expectation for assertion in spying", () => {
+        let spy = sinon.spy(mockInstance, "greet")
+        mockInstance.signUp("Praveen", "8554947569", "praveen@gmail.com", "12344")
+        expect(spy.calledOnce).to.be.true
+    })
+
+    it("mockng the greeting", () => {
+        let mockGreet = sinon.mock(mockInstance)
+        let expectation = mockGreet.expects("greet")
+        expectation.exactly(1)
+        mockInstance.signUp("Praveen", "8554947569", "praveen@gmail.com", "12344")
+        mockGreet.verify()
     })
 })

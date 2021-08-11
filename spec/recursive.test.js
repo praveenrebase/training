@@ -21,7 +21,7 @@ describe("Creating the NODE", () => {
     describe("createNode", () => {
         tests = [
             {
-                description: "S",
+                description: "Creating node with proper parameter",
                 expected: true,
                 query: recursive.createNode(NODE, "B", "node 1", "A")
             },
