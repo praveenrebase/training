@@ -42,10 +42,21 @@ describe("Mocking", () => {
         expect(mockInstance.logIn("praveen@gmail.com", "12344")).to.be.true
     })
 
-    it("stub thirdParyAuth failed", () => {
+    it("stub thirdParyAuth wrong details", () => {
         sinon.stub(mockInstance, "thirdPartyAuth").callsFake(() => {
             return false
         })
         expect(mockInstance.logIn("praveen", "1")).to.be.false
+    })
+
+    it("stub multiple calls", () => {
+        const stub = sinon.stub(mockInstance, "thirdPartyAuth")
+        stub.onFirstCall().returns(false)
+        stub.onSecondCall().returns(false)
+        stub.onThirdCall().returns(true)
+
+        expect(mockInstance.logIn("praven@gmail.com", "1234")).to.be.false
+        expect(mockInstance.logIn("raveen@gmail.com", "124")).to.be.false
+        expect(mockInstance.logIn("praveen@gmail.com", "12344")).to.be.true
     })
 })
