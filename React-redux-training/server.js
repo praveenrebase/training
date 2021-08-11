@@ -5,7 +5,9 @@ const cors = require('cors')
 app.use(cors())
 app.use(express.json())
 
-
+// @route: /
+// @method: get
+// @usage: /?name=name
 app.get("/", (req, res) => {
     const name = "Hello " + req.query.name
     let available = fs.readFileSync("students.json").toString()
@@ -15,9 +17,11 @@ app.get("/", (req, res) => {
     res.send(`<h2>${name}</h2>`)
 })
 
+// @route: /
+// @method: POST
+// @usage: Adds req.body.name into students.json if not present
 app.post("/", (req, res) => {
     try {
-        console.log(req.body)
         const name = req.body.name
         let availableData = fs.readFileSync("students.json").toString()
         if (availableData === "") {
@@ -48,7 +52,7 @@ app.post("/", (req, res) => {
     }
 })
 
-
+// Starting the server
 app.listen(5000, () => {
     console.log("Server is running")
 })
